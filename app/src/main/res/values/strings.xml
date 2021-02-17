@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">COVID-19 India</string>
+    <string name="covid_19_cases_in_india_updates">COVID-19 Cases In India Updates</string>
+    <string name="timeline_of_covid_19_in_india">Rate of Growth of Confirmed COVID-19 Cases in India</string>
+    <string name="rate_of_recovery_of_covid_19_cases_in_india">Rate of Recovery of COVID-19 Cases in India</string>
+    <string name="deceased_cases_in_india_timeline">Deceased Cases in India Timeline</string>
+</resources>

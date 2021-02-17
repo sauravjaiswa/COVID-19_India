@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.MainActivity">
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/covid_19_cases_in_india_updates"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:padding="15dp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/colorPrimaryDark"/>
+
+    <ScrollView
+        android:layout_below="@+id/txtTitle"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_below="@+id/txtTitle"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_card"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:orientation="vertical"
+            android:layout_margin="10dp"
+            android:background="@drawable/bg_card">
+
+            <TextView
+                android:id="@+id/txtState"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No. of Cases in State"
+                android:layout_margin="10dp"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/colorPrimaryDark"/>
+
+            <TextView
+                android:id="@+id/etConfirmed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Confirmed"
+                android:textStyle="bold"
+                android:layout_marginLeft="15dp"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/etRecovered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recovered"
+                android:textStyle="bold"
+                android:layout_marginLeft="15dp"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/etDeceased"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Deceased:"
+                android:textStyle="bold"
+                android:layout_marginLeft="15dp"
+                android:textSize="15sp"/>
+
+        </LinearLayout>
+
+        <HorizontalScrollView
+            android:id="@+id/horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/piechartConfirmed"
+                    android:padding="15dp"
+                    android:layout_width="370dp"
+                    android:layout_height="400dp" />
+
+                <com.github.mikephil.charting.charts.BarChart
+                    android:id="@+id/barchartActive"
+                    android:layout_width="370dp"
+                    android:layout_height="400dp"
+                    android:padding="15dp" />
+
+                <com.github.mikephil.charting.charts.BarChart
+                    android:id="@+id/barchartRecovered"
+                    android:layout_width="370dp"
+                    android:layout_height="400dp"
+                    android:padding="15dp" />
+
+                <com.github.mikephil.charting.charts.BarChart
+                    android:id="@+id/barchartDeceased"
+                    android:layout_width="370dp"
+                    android:layout_height="400dp"
+                    android:padding="15dp" />
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+        <LinearLayout
+            android:id="@+id/llUniversal"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:orientation="vertical"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/bg_card">
+
+            <TextView
+                android:id="@+id/txtInd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No. of Cases in India"
+                android:layout_margin="10dp"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/colorPrimaryDark"/>
+
+            <TextView
+                android:id="@+id/etConfirmedInd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Confirmed:"
+                android:textStyle="bold"
+                android:layout_marginLeft="15dp"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/etRecoveredInd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recovered:"
+                android:textStyle="bold"
+                android:layout_marginLeft="15dp"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/etDeceasedInd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Deceased:"
+                android:textStyle="bold"
+                android:layout_marginLeft="15dp"
+                android:textSize="15sp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtOverall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/timeline_of_covid_19_in_india"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:padding="15dp"
+            android:gravity="center_horizontal"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_below="@+id/horizontal" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/linechart"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:padding="15dp"
+            android:layout_below="@+id/txtOverall"/>
+
+        <TextView
+            android:id="@+id/txtOverallRecovered"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/rate_of_recovery_of_covid_19_cases_in_india"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:padding="15dp"
+            android:gravity="center_horizontal"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_below="@+id/linechart" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/linechartRecovered"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:padding="15dp"
+            android:layout_below="@+id/txtOverallRecovered"/>
+
+        <TextView
+            android:id="@+id/txtOverallDeceased"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/deceased_cases_in_india_timeline"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:padding="15dp"
+            android:gravity="center_horizontal"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_below="@+id/linechartRecovered" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/linechartDeceased"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:padding="15dp"
+            android:layout_below="@+id/txtOverallDeceased"/>
+
+    </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/progressLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+</RelativeLayout>
